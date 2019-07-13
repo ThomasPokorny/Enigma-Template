@@ -1,0 +1,153 @@
+{
+    "story" : [ 
+   
+           {
+            "id" : 0,
+            "desc" : "Du bist bei Tugis party und jamand bietet dir ein Getränk an, wie reagierst du?",
+            "links" : [
+               
+                   { "type" : "choice",    
+                     "desc"  : "Trinken",
+                     "destiny" : 1 },
+                
+
+                     { "type" : "choice",   
+                        "desc"  : "Ablehnen",
+                        "destiny" : 2  },
+   
+                   { "type" : "choice",   
+                     "desc"  : "Person Haun",
+                     "destiny" : 0 }	
+   
+                ] 	
+           },
+   
+           {
+            "id" : 1,
+            "desc" : "Ist es Tugi? ",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : "Ja",
+                "destiny" : 3 },
+           
+
+                { "type" : "choice",   
+                   "desc"  : "Nein",
+                   "destiny" : 4  }
+   
+                ] 	
+           },
+           {
+            "id" : 2,
+            "desc" : "Bist du wirklich so uncool?",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : "Nein",
+                "destiny" : 9 },
+           
+
+                { "type" : "choice",   
+                   "desc"  : "Fix not!",
+                   "destiny" : 9  }
+   
+                ] 	
+           },
+           {
+            "id" : 9,
+            "desc" : "Ok, also : Du bist bei Tugis party und jamand bietet dir ein Getränk an, wie reagierst du?",
+            "links" : [
+               
+                   { "type" : "choice",    
+                     "desc"  : "Trinken",
+                     "destiny" : 1 },
+                
+
+                     { "type" : "choice",   
+                        "desc"  : "Trinken!!",
+                        "destiny" : 1  }
+                ] 	
+           },
+   
+           {
+            "id" : 1,
+            "desc" : "Ist es Tugi? ",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : "Ja",
+                "destiny" : 3 },
+           
+
+                { "type" : "choice",   
+                   "desc"  : "Nein",
+                   "destiny" : 4  }
+   
+                ] 	
+           },
+
+           {
+            "id" : 3,
+            "desc" : " Nice ",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : " Weiter Trinken",
+                "destiny" : 5 }
+   
+                ] 	
+           },
+
+           {
+            "id" : 4,
+            "desc" : "Bei Tugis party ohne Tugi trinken.. ziemlich asozial",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : "Tugi rufen",
+                "destiny" : 3 }
+   
+                ] 	
+           },
+
+           {
+            "id" : 5,
+            "desc" : "Welches Getränk trinkst du?",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : "Bier",
+                "destiny" : 7 },
+
+                { "type" : "choice",    
+                  "desc"  : "Wein",
+                  "destiny" : 7 },
+                
+                  { "type" : "choice",    
+                    "desc"  : "Gin Tonic",
+                    "destiny" : 7 }
+
+   
+                ] 	
+           },
+
+           {
+            "id" : 7,
+            "desc" : "Mit Tugi? ",
+            "links" : [
+               
+              { "type" : "choice",    
+                "desc"  : "Ja",
+                "destiny" : 3 },
+
+                { "type" : "choice",    
+                  "desc"  : "Nein..",
+                  "destiny" : 4 }
+   
+                ] 	
+           }
+   
+          
+       ]	
+   }   

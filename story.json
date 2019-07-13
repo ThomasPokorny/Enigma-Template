@@ -1,0 +1,85 @@
+{
+    "story" : [ 
+   
+           {
+            "id" : 0,
+            "desc" : "Selina Spiel spielen ",
+            "links" : [
+               
+                   { "type" : "choice",    
+                     "desc"  : "Ja",
+                     "destiny" : 1 },
+                
+
+                     { "type" : "choice",   
+                        "desc"  : "Nein",
+                        "destiny" : 2  },
+   
+                   { "type" : "choice",   
+                     "desc"  : "vielleicht",
+                     "destiny" : 0 }	
+   
+                ] 	
+           },
+   
+           {
+            "id" : 1,
+            "desc" : "Wer ist die schönste im ganzen land? ",
+            "links" : [
+               
+                   { "type" : "choice",    
+                     "desc"  : "kA",
+                     "destiny" : 0 },
+                   
+                   { "type" : "answer",     
+                     "desc"  : "Antwort?",
+                     "expected" : "Selina",
+                     "destiny_right" : 3 ,
+                     "destiny_wrong" : 4 }
+   
+                ] 	
+           },
+   
+           {
+            "id" : 3,
+            "desc" : "selina ist so toll",
+            "type" : "win"
+           }, 
+   
+           {
+            "id" : 4,
+            "desc" : "suck it loser",
+            "links" : [
+               
+                { "type" : "choice",    
+                  "desc"  : "Nochmal selinan",
+                  "destiny" : 1 },
+                
+                { "type" : "choice",   
+                  "desc"  : "Opfer sein",
+                  "destiny" : 2  },
+
+                { "type" : "choice",   
+                  "desc"  : "):",
+                  "destiny" : 0 }	
+
+             ] 	
+           }, 
+   
+           {
+            "id" : 2,
+            "desc" : "opfer",
+            "links" : [
+               
+                   { "type" : "choice",    
+                     "desc"  : "OK",
+                     "destiny" : 0 },
+                   
+                   { "type" : "choice",   
+                     "desc"  : "Cool",
+                     "destiny" : 1  }	
+   
+                ] 	
+           }
+       ]	
+   }   
