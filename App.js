@@ -76,7 +76,7 @@ export default class App extends Component {
 
             <Text style={styles.welcome}>{this.state.storyCard.desc}</Text>
 
-            <View style={{flex: 2, flexDirection: 'row'}}>
+            <View style={{flex: 2}}>
                 {this.state.storyCard.links.map(link => 
                   this.renderCardLinkElement(link) 
                 )}
