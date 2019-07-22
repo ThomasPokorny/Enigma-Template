@@ -4,7 +4,7 @@
  */
 
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, AsyncStorage} from 'react-native';
 
 import imgBook from './book.gif'; 
 
@@ -14,6 +14,8 @@ import imgLibray from './library.png';
 */
 
 const storyJson = require('./story.1.json');
+//
+const defaultStorageKey = '$storyPointer';
 
 
 export default class App extends Component {
@@ -29,6 +31,36 @@ export default class App extends Component {
 
     this.createCard = this.createCard.bind(this);
     this.renderCardLinkElement = this.renderCardLinkElement.bind(this);
+
+    this.saveGame = this.saveGame.bind(this);
+    this.saveKey = this.saveKey.bind(this);
+    this.loadGame = this.loadGame.bind(this);
+  }
+
+  saveGame(){
+    this.saveKey(defaultStorageKey, this.state.storyPointer);
+  }
+
+  loadGame(){
+    AsyncStorage.getItem(defaultStorageKey).then((v) => {
+      if(v != null){
+        this.createCard(v);
+
+        this.setState({
+          storyPointer: v,
+          renderGame:true
+        });
+      }else
+        alert('No saved Game!')
+    });
+  }
+
+  async saveKey(key, value) {
+    try {
+      await AsyncStorage.setItem(key, value);
+    } catch (error) {
+      console.log("Error saving data" + error);
+    }
   }
 
   createCard(id){
@@ -42,7 +74,8 @@ export default class App extends Component {
     }
 
     this.setState({
-      storyCard: currentCard
+      storyCard: currentCard,
+      storyPointer: id
     })
   }
 
@@ -61,7 +94,7 @@ export default class App extends Component {
             <Text style={styles.welcome}>Welcome to Enigma!</Text>
 
             <Text style={styles.options} onPress={ () =>{ this.setState({ renderGame : true }); this.createCard(this.state.storyPointer) }} >START GAME</Text>
-            <Text style={styles.options}>CREATOR MODE</Text> 
+            <Text style={styles.options} onPress={ () =>{ this.loadGame() }}>LOAD GAME</Text> 
             <Text style={styles.options}>INFO</Text>
 
           </View>
@@ -82,6 +115,10 @@ export default class App extends Component {
                 )}
             </View>
 
+            <View style={{flexDirection: 'row'}}>
+              <Text style={styles.options} onPress={ () =>{ this.saveGame(); }} >SAVE GAME / </Text>
+              <Text style={styles.options} onPress={ () =>{ this.setState({ renderGame : false }); }} >EXIT</Text>
+            </View>
           </View>
         </View>
       );
